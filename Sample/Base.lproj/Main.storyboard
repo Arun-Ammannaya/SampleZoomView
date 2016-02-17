@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RBL-An-GXa">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4e2-Lm-qnm">
+            <objects>
+                <viewController id="RBL-An-GXa" customClass="ViewController" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="134-zm-UnG"/>
+                        <viewControllerLayoutGuide type="bottom" id="xWu-ja-RFX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="30H-U5-7PF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aaa.png" translatesAutoresizingMaskIntoConstraints="NO" id="RzC-ny-npa" customClass="ZoomRotatePanImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hV-FR-SJi">
+                                <rect key="frame" x="9" y="550" width="147" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="32L-hq-ZS2"/>
+                                    <constraint firstAttribute="height" constant="30" id="P1A-eo-ytu"/>
+                                </constraints>
+                                <state key="normal" title="Create Image"/>
+                                <connections>
+                                    <action selector="craeteImageAction:" destination="RBL-An-GXa" eventType="touchUpInside" id="wgP-h8-niF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RzC-ny-npa" firstAttribute="leading" secondItem="30H-U5-7PF" secondAttribute="leading" id="BFf-nR-lYk"/>
+                            <constraint firstItem="xWu-ja-RFX" firstAttribute="top" secondItem="4hV-FR-SJi" secondAttribute="bottom" constant="20" id="DWU-ZI-230"/>
+                            <constraint firstItem="4hV-FR-SJi" firstAttribute="leading" secondItem="30H-U5-7PF" secondAttribute="leading" constant="9" id="LaB-zO-YP2"/>
+                            <constraint firstAttribute="trailing" secondItem="RzC-ny-npa" secondAttribute="trailing" id="MF9-bX-bn4"/>
+                            <constraint firstItem="RzC-ny-npa" firstAttribute="top" secondItem="30H-U5-7PF" secondAttribute="top" id="c98-SW-zma"/>
+                            <constraint firstItem="xWu-ja-RFX" firstAttribute="top" secondItem="RzC-ny-npa" secondAttribute="bottom" id="m5Y-Rx-QCQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="RzC-ny-npa" id="0GC-dr-YPC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v5N-Ap-edT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5793" y="-6223"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="aaa.png" width="300" height="408"/>
+    </resources>
+</document>
