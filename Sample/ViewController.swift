@@ -10,6 +10,21 @@ import UIKit
 import AVFoundation
 
 
+class DetailViewController: UIViewController {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    var image: UIImage!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imageView.image = image
+    }
+
+
+}
+
+
 
 class ViewController: UIViewController , UIGestureRecognizerDelegate {
     
@@ -31,7 +46,7 @@ class ViewController: UIViewController , UIGestureRecognizerDelegate {
         
         var canvasSize = size
         
-        if boundsScale > imageScale { 
+        if boundsScale > imageScale {
             canvasSize.width =  canvasSize.height * boundsScale
         }else{
             canvasSize.height =  canvasSize.width / boundsScale
@@ -75,5 +90,11 @@ class ViewController: UIViewController , UIGestureRecognizerDelegate {
         UIGraphicsEndImageContext()
         
         UIImagePNGRepresentation(newImage)?.writeToFile("/Users/admin/Desktop/xyy.png", atomically: true)
+        
+        let sb = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = sb.instantiateViewControllerWithIdentifier("DetailViewController") as? DetailViewController
+        vc!.image = newImage
+        self.navigationController?.pushViewController(vc!, animated: true)
+
     }
 }
